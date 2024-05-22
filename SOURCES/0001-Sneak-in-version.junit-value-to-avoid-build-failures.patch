@@ -1,0 +1,26 @@
+From a8d816d5bef36665831245f6fd14f87892cafe07 Mon Sep 17 00:00:00 2001
+From: Dinesh Prasanth M K <dmoluguw@redhat.com>
+Date: Wed, 13 Nov 2019 13:32:09 -0500
+Subject: [PATCH] Sneak in version.junit value to avoid build failures
+
+Signed-off-by: Dinesh Prasanth M K <dmoluguw@redhat.com>
+---
+ pom.xml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/pom.xml b/pom.xml
+index 23844cc..bf5bb9f 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -55,6 +55,8 @@
+     <maven.compiler.target>${javac.target.version}</maven.compiler.target>
+     
+     <javac.debuglevel>lines,source,vars</javac.debuglevel>
++    <!-- Versions for other dependencies -->
++    <version.junit>4</version.junit>
+ 
+     <!--
+      | For automatically generating PackageVersion.java. Your child pom.xml must define
+-- 
+2.41.0
+
