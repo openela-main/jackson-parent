@@ -1,5 +1,5 @@
 Name:          jackson-parent
-Version:       2.14
+Version:       2.19.1
 Release:       1%{?dist}
 Summary:       Parent pom for all Jackson components
 License:       Apache-2.0
@@ -9,8 +9,6 @@ Source0:       %{url}/archive/%{name}-%{version}.tar.gz
 # jackson-parent package don't include the license file
 # reported @ https://github.com/FasterXML/jackson-parent/issues/1
 Source1:       http://www.apache.org/licenses/LICENSE-2.0.txt
-
-Patch0: 0001-Sneak-in-version.junit-value-to-avoid-build-failures.patch
 
 BuildRequires:  maven-local
 BuildRequires:  mvn(com.fasterxml:oss-parent:pom:)
@@ -25,7 +23,6 @@ Project for parent pom for all Jackson components.
 
 %prep
 %setup -q -n %{name}-%{name}-%{version}
-%patch -P 0 -p1
 
 cp -p %{SOURCE1} LICENSE
 sed -i 's/\r//' LICENSE
@@ -41,7 +38,11 @@ sed -i 's/\r//' LICENSE
 %license LICENSE
 
 %changelog
-* Tue Oct 24 2023 Red Hat PKI Team <rhcs-maint@redhat.com> - 2.14-1
+* Thu Jul 31 2025 Red Hat PKI Team <rhcs-maint@redhat.com> - 2.19.1-1
+- Rebase to version 2.19.1
+- Resolves: RHEL-103106
+
+* Tue Nov 21 2023 Red Hat PKI Team <rhcs-maint@redhat.com> - 2.14-1
 - Rebase to upstream version 2.14
 
 * Tue Nov 12 2019 Red Hat PKI Team <rhcs-maint@redhat.com> - 2.10-1
